@@ -1,13 +1,14 @@
 import './App.css';
-import CardProject from './components/Card-Project';
-import CardTwo from './components/card-2';
+import NavBar from './components/NavBar';
+import Hero from './components/Hero';
+import Card from './components/Card';
 
 function App() {
   return (
-    <div className='container'>
-      
-      {/* <CardProject/> */}
-      <CardTwo/>
+    <div>
+      <NavBar/>
+      <Hero/>
+      <Card/>
     </div>
     
   );
