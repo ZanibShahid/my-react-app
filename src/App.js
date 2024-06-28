@@ -1,58 +1,19 @@
 import './App.css';
-import Contact from './components/Contact';
-import one from "./images/1.jpg"
-import two from "./images/2.jpg"
-import three from "./images/3.jpg"
-import four from "./images/4.jpg"
+import Joke from './components/Joke';
 
 
 function App() {
-  // const firstName = "Zanib"
-  // const lastName="Shahid"
-
-  // const date = new Date()
-  // // const hours = date.getHours()% 12
-  // const hours = date.getHours()
-
-  // let timeOfDay
-  // if (hours<12){
-  //   timeOfDay = 'morning'
-  // }
-  // else if (hours>=12 && hours<17)
-  //   {
-  //     timeOfDay = 'afternoon'
-  //   }
-  //   else{
-  //     timeOfDay = 'night'
-  //   }
   return (
-    // <h1>Hello {firstName} {lastName}!</h1>
+   <div>
+    <Joke setup="I got my daughter a fridge for her birthday." punchline="I can't wait to see her face light up when she opens it."/>
+    <Joke setup="How did the hacker escape the police?" punchline="He just ransomware!"/>
+    <Joke setup="Why don't pirates travel on mountain roads?" punchline="Scurvy."/>
+    <Joke setup="Why do bees stay in the hive in the winter?" punchline="Swarm."/>
+    <Joke setup="What's the best thing about Switzerland?" punchline="I don't know, but the flag is a big plus!"/>
+    <Joke punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."/>
 
-    // <h1>It is currently about {date.getHours()% 12}'o clock</h1>
-    
-    // <h1>It is currently about {hours}'o clock.Good {timeOfDay}</h1>
-    <div className="contacts">
-            <Contact 
-            image={one}
-            name="Mr. Whiskerson"
-            phone="(212) 555-1234"
-            email="mr.whiskaz@catnap.meow" />
-            <Contact
-            image={two}
-            name="Fluffykins"
-            phone="(212) 555-2345"
-            email="fluff@me.com"/>
-            <Contact
-            image={three}
-            name="Felix"
-            phone="(212) 555-4567"
-            email="thecat@hotmail.com"/>
-            <Contact
-            image={four}
-            name="Pumpkin"
-            phone="(0800) CAT KING"
-            email="pumpkin@scrimba.meow"/>
-    </div>
+   </div>
+   
   );
 }
 
