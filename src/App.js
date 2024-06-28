@@ -1,12 +1,22 @@
 import './App.css';
 import Joke from './components/Joke';
-
+import Card from './components/Card'
+import card1 from "./images/card1.png"
 
 function App() {
   
   return (
    <div>
-    <Joke 
+    <Card
+    img = {card1}
+    rating ={5.0}
+    reviewCount= {6}
+    country = "Pakistan"
+    title ="Life Lessons with Katie Zaferes"
+    price ={136}
+    
+    />
+    {/* <Joke 
     setup="I got my daughter a fridge for her birthday." 
     punchline="I can't wait to see her face light up when she opens it."
     upvotes={2}
@@ -47,7 +57,7 @@ function App() {
     downvotes={8}
     isPun={false}
     comments={[{author: "", body: "", title: ""},]}
-    />
+    /> */}
 
    </div>
    
