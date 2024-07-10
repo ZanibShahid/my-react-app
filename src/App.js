@@ -1,11 +1,27 @@
 import './App.css';
-import Joke from './components/Joke';
 import jokeData from './components/jokeData';
+// import Joke from './components/Joke';
+// import jokeData from './components/jokeData';
+
 
 function App() {
-  const jokeElements = jokeData.map(joke=>{
-    return <Joke setup={joke.setup} punchline={joke.punchline}/>
-  })
+   const card = jokeData.map(()=>{
+    return(
+      <div className="card col-4 border-0 m-3">
+                <img src="./images/card1.png" className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <div className="d-flex">
+                        <p className="ms-2">5.0 <span className="text-secondary">(6) . USA</span></p>
+                    </div>
+                    <p className="card-text lh-1">Life lessons with Katie Zaferes</p>
+                    <p className="card-text lh-1"><strong>From $136</strong> / person</p>
+                </div>
+      </div>
+    )
+   })
+  // const jokeElements = jokeData.map(joke=>{
+  //   return <Joke setup={joke.setup} punchline={joke.punchline}/>
+  // })
 
   return (
   //  <div>
@@ -53,7 +69,8 @@ function App() {
   //   />
   //  </div>
   <div>
-    {jokeElements}
+    {/* {jokeElements} */}
+    {card}
   </div>
    
   );
