@@ -1,25 +1,20 @@
 import React from "react"
 
 export default function Card(props) {
-    let badgeText
-    if (props.item.openSpots === 0) {
-        badgeText = "SOLD OUT"
-    } else if (props.item.location === "Online") {
-        badgeText = "ONLINE"
-    }
+    
     return (
-        <div className="card">
-            {badgeText && <div className="card--badge">{badgeText}</div>}
-
-            <img src={`../images/${props.item.coverImg}`} className="card--image" width={"200px;"}/>
-            <div className="card--stats">
-                <img src="../images/star.png" className="card--star" />
-                <span>{props.item.stats.rating}</span>
-                <span className="gray">({props.item.stats.reviewCount}) • </span>
-                <span className="gray">{props.item.location}</span>
-            </div>
-            <p>{props.item.title}</p>
-            <p><span className="bold">From ${props.item.price}</span> / person</p>
+        <div className="my-5 container">
+        <div className="card flex-row ">
+            <img class="card-img-left rounded img-fluid" style={{height:"168px",width:"150px"}} src={`../images/${props.item.coverImg}`}/>
+        <div className="card-body">
+            <p>
+                <span><img className="me-1" src="../images/location.png" alt="" /></span>
+                {props.item.location} 
+                <span><a href="" className="text-secondary ms-1">View on Google Maps</a></span></p>
+          <h4 className="card-title h5 h4-sm">{props.item.title}</h4>
+          <p className="card-text">{props.item.description}</p>
+        </div>
+        </div>
         </div>
     )
 }
