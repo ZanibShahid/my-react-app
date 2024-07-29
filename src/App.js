@@ -23,10 +23,7 @@ function App() {
  
   <div>
     <NavBar/>
-    {/* <Card/> */}
-    <section className='card-list'>
     {cards}
-    </section>
   </div>
    
   );
