@@ -52,26 +52,52 @@ function App() {
   // }
   // const state="Yes"
 
-  const [isImportant, setIsImportant] = React.useState("Yes")
+  const [count, setCount] = React.useState(0)
 
-  function handleClick() {
-    setIsImportant("No") 
+  // function plusCounter() {
+  //   console.log("add")
+  //   setCount(function(){
+  //     return count + 1
+  //   })
+  // }
+  function plusCounter() {
+    console.log("add")
+    setCount(prevCount => prevCount + 1)
   }
+  function minusCounter() {
+    console.log("minus")
+    setCount(prevCount => prevCount - 1)
+  }
+  // function plusCounter() {
+  //   console.log("add")
+  //   setCount(count + 1)
+  // }
+  // function minusCounter() {
+  //   console.log("minus")
+  //   setCount(count - 1)
+  // }
   return (
-  <div className='state'>
-    <h1 className='state--title'>Is state important to know?</h1>
-    <div className='state--value' onClick={handleClick}>
-      <h1>{isImportant}</h1>
+    <div className="counter">
+        <button className="counter--minus" onClick={minusCounter}>–</button>
+          <div className="counter--count">
+              <h1>{count}</h1>
+          </div>
+        <button className="counter--plus" onClick={plusCounter}>+</button>
     </div>
-    {/* <NavBar/>
-    <Meme/>
-     */}
-    {/* {greeting} */}
+  // <div className='state'>
+  //   <h1 className='state--title'>Is state important to know?</h1>
+  //   <div className='state--value' onClick={handleClick}>
+  //     <h1>{isImportant}</h1>
+  //   </div>
+  //   {/* <NavBar/>
+  //   <Meme/>
+  //    */}
+  //   {/* {greeting} */}
 
-    {/* {thingsElements}
-    {/* <img onMouseOver={handleMouseOver} src="https://picsum.photos/640/360" />
-    <button onClick={handleClick}>Click me</button> */}
-  </div>
+  //   {/* {thingsElements}
+  //   {/* <img onMouseOver={handleMouseOver} src="https://picsum.photos/640/360" />
+  //   <button onClick={handleClick}>Click me</button> */}
+  // </div>
    
   );
 }
