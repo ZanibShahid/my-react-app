@@ -1,31 +1,32 @@
 import NavBar from './components/NavBar.js';
 import Meme from './components/Meme.js';
 import React from 'react';
+import './App.css';
 
 function App() {
-   function greeting(name) {
-    const date = new Date()
-    const hours = date.getHours()
-    let timeofDay
-    if(hours >= 4 && hours <12)
-    {
-      timeofDay = "Morning"
-    }
-    else if(hours >= 12 && hours <17)
-    {
-      timeofDay = "Afternoon"
-    }
-    else if(hours >= 17 && hours <20)
-    {
-      timeofDay = "Evening"
-    }
-    else
-    {
-        timeofDay = "Night"
-    }
-    return `Good ${timeofDay}, ${name}`
-  }
-  console.log(greeting("Zainab"))
+  //  function greeting(name) {
+  //   const date = new Date()
+  //   const hours = date.getHours()
+  //   let timeofDay
+  //   if(hours >= 4 && hours <12)
+  //   {
+  //     timeofDay = "Morning"
+  //   }
+  //   else if(hours >= 12 && hours <17)
+  //   {
+  //     timeofDay = "Afternoon"
+  //   }
+  //   else if(hours >= 17 && hours <20)
+  //   {
+  //     timeofDay = "Evening"
+  //   }
+  //   else
+  //   {
+  //       timeofDay = "Night"
+  //   }
+  //   return `Good ${timeofDay}, ${name}`
+  // }
+  // console.log(greeting("Zainab"))
   // const [things, setThings] = React.useState(["thing 1", "thing 2"])
   // function addItem(){
   //     const newArray =`thing ${things.length + 1}`
@@ -49,12 +50,23 @@ function App() {
   // function handleMouseOver() {
   //   console.log("MouseOver!")
   // }
-  
+  // const state="Yes"
+
+  const [isImportant, setIsImportant] = React.useState("Yes")
+
+  function handleClick() {
+    setIsImportant("No") 
+  }
   return (
-  <div>
-    <NavBar/>
+  <div className='state'>
+    <h1 className='state--title'>Is state important to know?</h1>
+    <div className='state--value' onClick={handleClick}>
+      <h1>{isImportant}</h1>
+    </div>
+    {/* <NavBar/>
     <Meme/>
-    {greeting}
+     */}
+    {/* {greeting} */}
 
     {/* {thingsElements}
     {/* <img onMouseOver={handleMouseOver} src="https://picsum.photos/640/360" />
