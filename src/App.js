@@ -4,26 +4,24 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  // const isGoingOut = false
+  // const thingsArray = ["Thing 1", "Thing 2"]
+  const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
     
-  // let answer = isGoingOut === true ? "Yes" : "No"  // Use ternary here
-  // if(isGoingOut === true) {
-  //     answer = "Yes"
-  // } else {
-  //     answer = "No"
-  // }
-
-  const [isGoingOut, setIsGoingOut] = React.useState(true)
-  function changeMind (){
-    setIsGoingOut(prevState => !prevState)
+  function addItem() {
+      // We'll work on this next
+      // const newThingText = `Thing ${thingsArray.length + 1}`
+      // thingsArray.push(newThingText)
+      // document.getElementById()
+      // console.log(thingsArray)
+     setThingsArray(prevThingsArray => {
+      return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`]
+     })
   }
+  const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
   return (
-    // <Meme/>
-    <div className="state">
-        <h1 className="state--title">Do I feel like going out tonight?</h1>
-        <button className="state--value" onClick={changeMind}>
-            {isGoingOut ? "Yes" : "No"}
-        </button>
+    <div>
+        <button onClick={addItem}>Add Item</button>
+        {thingsElements}
     </div>
    
   );
