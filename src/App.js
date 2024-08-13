@@ -4,25 +4,47 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  // const thingsArray = ["Thing 1", "Thing 2"]
-  const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
-    
-  function addItem() {
-      // We'll work on this next
-      // const newThingText = `Thing ${thingsArray.length + 1}`
-      // thingsArray.push(newThingText)
-      // document.getElementById()
-      // console.log(thingsArray)
-     setThingsArray(prevThingsArray => {
-      return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`]
-     })
-  }
-  const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
-  return (
-    <div>
-        <button onClick={addItem}>Add Item</button>
-        {thingsElements}
-    </div>
+  const [contact, setContact] = React.useState({
+    firstName: "Jhon",
+    lastName: "Doe",
+    phone: "+1 (719) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: false
+})
+/**
+ * Challenge: Fill in the values in the markup
+ * using the properties of our state object above
+ * (Ignore `isFavorite` for now)
+ */
+let starIcon = contact.isFavorite ? "../images/star-filled.png" : "../images/star-empty.png"
+// const [starIcon, setstarIcon] = React.useState(true)
+
+function toggleFavorite() {
+    // console.log("Toggle Favorite")
+    setContact(prevState => {return{
+      ...prevState,
+      isFavorite: !prevState.isFavorite
+    }})
+
+}
+return (
+  <main>
+    <article className="card">
+      <img  src="./images/profile.png" className="card--image" />
+      <div className="card--info">
+          <img 
+              src={`../images/${starIcon}`} 
+              className="card--favorite"
+              onClick={toggleFavorite}
+          />
+          <h2 className="card--name">
+              {contact.firstName} {contact.lastName}
+          </h2>
+          <p className="card--contact">{contact.phone}</p>
+          <p className="card--contact">{contact.email}</p>
+      </div>
+    </article>
+  </main>
    
   );
 }
